@@ -95,9 +95,9 @@ module MailRU
 
     def photos
       DSL.new(self, 'photos')  do
-        api 'createAlbum', :post
-        api 'get', :post
-        api 'getAlbums', :post
+        api 'createAlbum', :post, Request::Secure::No
+        api 'get', :post, Request::Secure::No
+        api 'getAlbums', :post, Request::Secure::No
         api 'upload', :post
       end
     end
